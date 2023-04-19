@@ -17,15 +17,16 @@
       </style>
 </head>
 
-<body class="w-auto">
+<body class="w-auto max-w-[1440px]">
     <div class="bg-mainBg"> 
         <!-- Navigation bar -->
-        <div class="bg-gradient-to-r from-belowNav1  to-belowNav2 h-[6.313em]">
-        <div class="bg-mainBg">
+        <div class="bg-gradient-to-r from-belowNav1  to-belowNav2 h-[6.313em] fixed z-10 w-full">
+        <div class="bg-mainBg  fixed w-full">
             <nav class="h-[5.688em] flex ml-[6.75em] items-center space-x-[2.375em]">
-                <img class=" w-[4.125em] h-[4.125em] flex" src="images/NavLogo.png">
+                <!-- Hero Image -->
+                <img class=" w-[4.125em] h-[4.125em] flex " src="images/NavLogo.png">
                 <div class="text-white space-x-[2.375em] font-bold">
-                    <a href="#">Matches</a>
+                    <a href="#" class="">Matches</a>
                     <a href="#">Team</a>
                     <a href="#">Store</a>
                 </div>
@@ -35,27 +36,66 @@
 
         <!-- Hero Section -->
         <div>
-            <img src="images/tempHeroimgNoShadow.png" alt="" class="w-full">
-            <div class=" h-[6.25em] bg-gradient-to-b from-belowNav1 to-transparent opacity-[38%]">
+                <img src="images/tempHeroimgNoShadow.png" alt="" class="w-full pt-[6.313em]">
+                <div class=" h-[6.25em] bg-gradient-to-b from-belowNav1 to-transparent opacity-[38%]">
             </div>
         </div>
 
         <!-- Main Partners -->
         <div class="flex justify-center">
-            <div class="flex space-x-[1.5em] font-bold text-white text-[1.125]">
+            <div class="flex space-x-[1.5em] font-bold text-white text-[1.125] items-center">
             <p class="opacity-[60%]">Main Partners</p>
-            <img src="images/nike.svg" alt="Nike Logo">
-            <img src="images/Spotify.svg" alt="Spotify Logo">
+            <div class="h-10 w-[0.08rem] bg-white opacity-[60%]"></div>
+            <a href="https://www.nike.com/gb/w/fc-barcelona-5y174"><img src="images/nike.svg" alt="Nike Logo" class="opacity-[60%] hover:opacity-[100%]"></a>
+            <a href="https://open.spotify.com/"><img src="images/Spotify.svg" alt="Spotify Logo" class="opacity-[60%] hover:opacity-[100%]"></a>
             </div>
         </div>
 
         <!-- 2nd Section -->
        
-        <div class="mx-auto mt-[6.25em] w-[76.5em] h-[102.875em] rounded-2xl bg-section2Bg">
+        <div class="mx-auto  mt-[6.25em] w-[90.5%] h-[102.875em] rounded-t-2xl bg-section2Bg">
             <div class="flex pt-[3.125em] flex-col items-center">
                 <p class="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-belowNav1 to-black to-50%"><b>Barcelona</b> Matches</p>
                 <p class="font-bold mt-[20px] text-xs text-transparent bg-clip-text bg-gradient-to-r from-belowNav1 to-black to-50%">NEXT MATCH</p>
-                <p class="font-bold mt-[10px] text-xl text-transparent bg-clip-text bg-gradient-to-r from-belowNav1 to-black to-70%">timer aaega yaha</p>
+                <!-- <p class="font-bold mt-[10px] text-xl text-transparent bg-clip-text bg-gradient-to-r from-belowNav1 to-black to-70%">timer aaega yaha</p> -->
+            
+            
+                <!-- Timer  -->
+                <div class="font-bold mt-[10px] text-2xl text-transparent bg-clip-text bg-gradient-to-r from-belowNav1 to-black to-70%">
+                    <!-- Display the countdown timer in an element -->
+                <p id="demo"></p>
+                
+                <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+                
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+                
+                  // Get today's date and time
+                  var now = new Date().getTime();
+                
+                  // Find the distance between now and the count down date
+                  var distance = countDownDate - now;
+                
+                  // Time calculations for days, hours, minutes and seconds
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                  // Display the result in the element with id="demo"
+                  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                  + minutes + "m " + seconds + "s ";
+                
+                  // If the count down is finished, write some text
+                  if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                  }
+                }, 1000);
+                </script>
+                </div>
             </div>
 
             <!-- Next Match Section-->
@@ -78,7 +118,7 @@
                 <!-- Team LOGOS -->
                 <div class="flex justify-between mt-[59px] mx-[118px]">
                     <div>
-                        <img src="images/Team1Logo.png" alt="">
+                        <img src="images/FC_barca.png" alt="">
                     </div>
                     <div class="-mt-[10px] flex flex-col items-center">
                         <img src="images/laligaLogo.svg" alt="">
@@ -87,12 +127,13 @@
                         <p class="mt-[13px]">STADIUM NAME</p>
                     </div>
                     <div>
-                        <img src="images/Team2Logo.png" alt="">
+                        <img src="images/Getafelogo.png" alt="">
                     </div>
                 </div>
 
             </div>
             </div>
+
 
              <!-- Barca Store  -->
              <div class="mt-[50px] flex flex-col items-center">
@@ -101,11 +142,64 @@
                 <p class="text-4xl">Store</p>
                 </div>
                 <div class="mt-[50px]">
-                    <div class="w-[1183px] h-[305px] rounded-2xl flex justify-between">
-                        <div class="h-[305px] w-[283px] bg-slate-700 rounded-xl"></div>
-                        <div class="h-[305px] w-[283px] bg-slate-700 rounded-xl"></div>
-                        <div class="h-[305px] w-[283px] bg-slate-700 rounded-xl"></div>
-                        <div class="h-[305px] w-[283px] bg-slate-700 rounded-xl"></div>
+                    <div class="mx[20px] h-[305px] rounded-2xl flex space-x-[17px]">
+                        <!-- Box 1  -->
+                        <div class="h-[305px] w-[283px] rounded-xl shadow-2xl">
+                            <img src="images/box1[1].png" alt="">
+                            <div class="flex">
+                                <img src="images/box1[2].png" class="mt-[30px] ml-[14px]" alt="">
+                                <div class = "ml-[10px]">
+                                    <p CLASS ="font-bold text-lg mt-[48px]">HOME KIT 22/23</p>
+                                    <p class = "text-[10px] mt-[8px]">Inspired by the 
+                                      30th Anniversary of Barcelona ‘92 </p>
+                                    <a href="https://store.fcbarcelona.com/en/c/0_1_1?ext=OCM_3638&utm_source=WebBarca&utm_medium=
+                                    Carrusel&utm_campaign=1aEquipacio_ORG_BLM_KITS_OCM_webBarca_IMG_WW_EN&utm_content=&utm_term=
+                                    1aEquipacio&_gl=1*1b9gmo8*_ga*MTkzNDE4NTQ5OC4xNjgxODI0NzMy*_ga_XCQ7B6K8TL*MTY4MTkwMzY5NC41LjEuMTY4MTkwMzczNS4wLjAuMA..&_ga=
+                                    2.112458308.1139713683.1681824732-1934185498.1681824732"><p class = "font-bold mt-[18px] hover:text-blue-900">SHOP NOW</p></a>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="h-[305px] w-[283px] rounded-xl shadow-2xl">
+                            <img src="images/box2[1].png" alt="">
+                            <div class="flex">
+                                <img src="images/box2[2].png" class="mt-[30px] ml-[14px]" alt="">
+                                <div class = "ml-[10px]">
+                                    <p CLASS ="font-bold text-lg mt-[48px]">AWAY KIT 22/23</p>
+                                    <p class = "text-[10px] mt-[8px]">A golden attitude.</p>
+                                    <a href="https://store.fcbarcelona.com/en/c/0_1_2?ext=OCM_3642&utm_source=WebBarca&utm_medium=Carrusel&utm_campaign=2aEquipacio_ORG_BLM_KITS_OCM_webBarca_IMG_WW_EN&utm_content=&utm_term=2aEquipacio&_gl=1*1min3oi*_ga*MTkzNDE4NTQ5OC4xNjgxODI0NzMy*_ga_XCQ7B6K8TL*MTY4MTkxMDY4NS42LjAuMTY4MTkxMDY4NS4wLjAuMA..&_ga=2.150206070.1139713683.1681824732-1934185498.1681824732"><p class = "font-bold mt-[33px] hover:text-blue-900">SHOP NOW</p></a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="h-[305px] w-[283px] rounded-xl shadow-2xl">
+                            <img src="images/box3[1].png" alt="">
+                            <div class="flex">
+                                <img src="images/box3[2].png" class="mt-[30px] ml-[14px]" alt="">
+                                <div class = "ml-[10px]">
+                                    <p CLASS ="font-bold text-lg mt-[48px]">THIRD KIT 22/23</p>
+                                    <p class = "text-[10px] mt-[8px]">Our style at heart.</p>
+                                    <a href="https://store.fcbarcelona.com/en/c/0_1_3?ext=OCM_620&utm_source=WebBarca&utm_medium=Carrusel&utm_campaign=3thKit2223_ORG_BLM_3RD_KIT_IMG_WW_EN&utm_term=3thKit2223&_gl=1*1eqjvzs*_ga*MTkzNDE4NTQ5OC4xNjgxODI0NzMy*_ga_XCQ7B6K8TL*MTY4MTkxMDY4NS42LjAuMTY4MTkxMDY4NS4wLjAuMA..&_ga=2.217773526.1139713683.1681824732-1934185498.1681824732"><p class = "font-bold mt-[33px] hover:text-blue-900">SHOP NOW</p></a>
+                                    </div>
+                            </div>
+
+                        </div>
+
+                        <div class="h-[305px] w-[283px] rounded-xl shadow-2xl">
+                            <img src="images/box4[1].png" alt="">
+                            <div class="flex">
+                                <img src="images/box4[2].png" class="mt-[30px] ml-[14px]" alt="">
+                                <div class = "ml-[10px]">
+                                    <p CLASS ="font-bold text-lg mt-[48px]">SENYERA KIT 22/23</p>
+                                    <p class = "text-[10px] mt-[8px]">A tribute to our roots.</p>
+                                    <a href="https://store.fcbarcelona.com/en/c/0_1_8?ext=OCM_1130&utm_source=WebBarca&utm_medium=Carrusel&utm_campaign=EquipacioSenyera_ORG_BLM_KITS_IMG_WW_EN&utm_term=EquipacioSenyera&_gl=1*1j037vx*_ga*MTkzNDE4NTQ5OC4xNjgxODI0NzMy*_ga_XCQ7B6K8TL*MTY4MTkxMDY4NS42LjAuMTY4MTkxMDY4NS4wLjAuMA..&_ga=2.238681408.1139713683.1681824732-1934185498.1681824732"><p class = "font-bold mt-[8px] hover:text-blue-900">SHOP NOW</p></a>
+                                    </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -118,15 +212,138 @@
                 </div>
                 <div class="mt-[50px]">
                     <div class="w-[1183px] h-[305px] rounded-2xl flex justify-between">
-                        <div class="h-[269px] w-[372px] bg-slate-700"></div>
-                        <div class="h-[269px] w-[372px] bg-slate-700"></div>
-                        <div class="h-[269px] w-[372px] bg-slate-700"></div>
+                        <div class="h-[269px] w-[372px] shadow-2xl hover:-translate-y-4 transition"><img src="images/news1.png" alt=""></div>
+                        <div class="h-[269px] w-[372px] shadow-2xl hover:-translate-y-4 transition"><img src="images/news2.png" alt=""></div>
+                        <div class="h-[269px] w-[372px] shadow-2xl hover:-translate-y-4 transition"><img src="images/news3.png" alt=""></div>
                     </div>
                 </div>
             </div>
             
 
        </div>
-    
+
+       <!-- 3rd Section  -->
+       <div>
+        <!-- Players  -->
+        <div class="flex justify-center mt-[50px] items-center">
+            <p class="font-bold text-white text-4xl">Players</p>
+        </div>
+        <div class="flex justify-end">
+            <div class="mr-[13%] -mt-[30px]">
+            <a href="#" class=" text-white font-base flex items-center hover:font-bold">View More<svg class="fill-white w-[22px] h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+            </a>
+            </div>
+        </div>
+
+        <!-- Player Cards Mini -->
+        <div class="flex justify-between mx-auto w-[90.5%] mt-[50px]">
+            
+            <div class="w-[282px] h-[282px] player_1 bg-[url('https://www.fcbarcelona.com/photo-resources/2022/11/02/a1edb34c-bc71-488e-acc1-0b33289e9443/22-RAPHINHA.jpg?width=470&height=470')] bg-cover bg-center">
+                <div class="h-[150px] player_a player1 bg-gradient-to-t from-black to-transparent mt-[132px] flex flex-col justify-end">
+                    <p class="font-bold text-2xl text-white mx-auto w-max ">22 Raphinha</p>
+                    <p class="text-base font-semibold text-white mx-auto w-max mb-[19px]">Forward</p>
+                </div>
+            </div>
+
+            <div class="w-[282px] h-[282px] player_2 bg-[url('https://www.fcbarcelona.com/photo-resources/2022/11/02/87c170bf-189d-448c-87d9-9f6c84838f40/21-FRENKIE_DE_JONG.jpg?width=470&height=470')] bg-cover bg-center">
+                <div class="h-[150px] player_b player1 bg-gradient-to-t from-black to-transparent mt-[132px] flex flex-col justify-end">
+                    <p class="text-2xl text-white mx-auto w-max "><b>21</b> Frenkie <b>De Jong</b></p>
+                    <p class="text-base font-semibold text-white mx-auto w-max mb-[19px]">Midfielder</p>
+                </div>
+            </div>
+
+            <div class="w-[282px] h-[282px] player_3 bg-[url('https://www.fcbarcelona.com/photo-resources/2022/11/02/c065cb6b-56a0-42e5-b303-2e128eb6171f/07-OUSMANE_DEMBELE.jpg?width=470&height=470')] bg-cover bg-center">
+                <div class="h-[150px] player_c player1 bg-gradient-to-t from-black to-transparent mt-[132px] flex flex-col justify-end">
+                    <p class=" text-2xl text-white mx-auto w-max "><b>7</b> Ousmane <b>Dembélé</b></p>
+                    <p class="text-base font-semibold text-white mx-auto w-max mb-[19px]">Forward</p>
+                </div>
+            </div>
+
+            <div class="w-[282px] h-[282px] player_4 bg-[url('https://www.fcbarcelona.com/photo-resources/2022/11/02/a4065cd7-9b67-4073-b957-80679c96e6c0/08-PEDRI.jpg?width=470&height=470')] bg-cover bg-center">
+                <div class="h-[150px] player_d player1 bg-gradient-to-t from-black to-transparent mt-[132px] flex flex-col justify-end">
+                    <p class="font-bold text-2xl text-white mx-auto w-max ">8 Pedri</p>
+                    <p class="text-base font-semibold text-white mx-auto w-max mb-[19px]">Midfielder</p>
+                </div>
+            </div>
+                
+
+        </div>
+
+        <!-- Acchievements  -->
+        <div>
+            <div class="flex flex-col justify-center mt-[50px] items-center">
+                <p class="font-bold text-white text-4xl">Achievements</p>
+                <img src="images/achievements.png" alt="" class="mt-[50px]">
+            </div>
+        </div>
+
+
+       </div>
+
+       <!-- Footer  -->
+
+       <div>
+        <!-- Players Footer  -->
+        <div class="flex mt-[100px] text-white justify-around">
+            
+            <!-- Goalkeeper  -->
+            <div class="flex flex-col">
+                <p class="text-2xl font-bold">GoalKeepers</p>
+                <div class="space-y-2 mt-[40px] font-extralight">
+                    <p class="hover:underline">Marc-André ter Stegen</p>
+                    <p class="hover:underline">Iñaki Peña</p>
+                </div>
+            </div>
+            
+            <!-- Defenders  -->
+            <div>
+                <p class="text-2xl font-bold">Defenders</p>
+                <div class="space-y-2 mt-[40px] font-extralight">
+                    <p class="hover:underline">Ronald Araujo</p>
+                    <p  class="hover:underline">Andreas Christensen</p>
+                    <p class="hover:underline">Marcos Alonso</p>
+                    <p class="hover:underline">Jordi Alba</p>
+                    <p class="hover:underline">Jules Kounde</p>
+                    <p class="hover:underline">Eric Garcia</p>
+                </div>
+            </div>
+
+            <!-- Midfielder  -->
+            <div>
+                <p class="text-2xl font-bold">Midfielders</p>
+                <div class="space-y-2 mt-[40px] font-extralight">
+                <p  class="hover:underline">Sergio Busquets</p>
+                <p class="hover:underline">Gavi</p>
+                <p class="hover:underline">Pedri</p>
+                <p class="hover:underline">Frank Kessie</p>
+                <p class="hover:underline">Sergi Roberto</p>
+                <p class="hover:underline">Frenkie de Jong</p>
+                </div>
+            </div>
+            
+            <!-- Forwards  -->
+            <div >
+                <p class="text-2xl font-bold">Forwards</p>
+                <div class="space-y-2 mt-[40px] font-extralight">
+                <p class="hover:underline" >Ousmane Dembele</p>
+                <p class="hover:underline">Robert Lewandowski</p>
+                <p class="hover:underline">Ansu Fati</p>
+                <p class="hover:underline">Ferran Torres</p>
+                <p class="hover:underline">Raphinha</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barca SVG -->
+        <svg class="icon h-11 fill-white mt-[38px] ml-10" aria-hidden="true" viewBox="0 0 515.16 80.36">
+            <path d="M96.74 17.39H125l-1.34 8.25h-17.79V36.1h16v8.26h-16V63h-9.13zM128 34.43c0-12.08 6-17.51 16.9-17.51 9.4 0 13.69 5.09 13.69 5.09v7.12h-7.45S150.62 25 145 25c-6 0-7.85 3-7.85 9.2v11.97c0 6.24 1.88 9.19 7.85 9.19 5.64 0 6.17-4.09 6.17-4.09h7.45v7.11s-4.29 5.1-13.69 5.1C134 63.48 128 58 128 46zM208 49.93c0 8.18-4.52 13.07-14.85 13.07H176V17.39h16.5c10.94 0 14.76 5 14.76 12.47A11.52 11.52 0 01202 39.93v.13s6 3.09 6 9.87zm-23.11-24.56V36h9.93a5.89 5.89 0 003.56-5.5c0-2.82-1.54-5.1-5.5-5.1zm14.16 24.09a6.2 6.2 0 00-4-5.64h-10.16v11.07h8.53c3.69 0 5.63-2.08 5.63-5.43zM249.37 57.91V63h-8.19l-2.48-9.6a40.88 40.88 0 01-8.12.81 44 44 0 01-7.92-.74L220.18 63h-8v-5.1l11.2-40.52h14.76zm-12.68-12.14L234 35.63c-1.07-4.22-2.41-10.13-2.41-10.13h-1.81s-1.35 5.91-2.49 10.13l-2.61 10.2a33.45 33.45 0 005.9.54 31.18 31.18 0 006.11-.6zM278.82 44.62s4.49 8.06 9.19 12.89V63h-7c-5.7-6.24-11.54-17.45-11.54-17.45h-4.76V63h-9.11V17.39h17.25c9.93 0 15.36 4.69 15.36 13.55 0 10.4-9.39 13.68-9.39 13.68zm-4-7.31a6 6 0 004.22-6c0-3.62-2.21-5.7-5.9-5.7h-8.45v11.7z"></path><path data-name="C" d="M293.3 34.43c0-12.08 6-17.51 16.91-17.51 9.4 0 13.69 5.09 13.69 5.09v7.12h-7.45s-.54-4.1-6.17-4.1c-6 0-7.85 3-7.85 9.2v11.94c0 6.24 1.88 9.19 7.85 9.19 5.63 0 6.17-4.09 6.17-4.09h7.45v7.11s-4.29 5.1-13.69 5.1C299.28 63.48 293.3 58 293.3 46z"></path><path d="M330.34 17.39h28.91l-1.34 8.25h-18.45V36.1h16.71v8.26h-16.71v10.4h19.12V63h-28.24zM366 17.39h9.12v37.37h18.45L392.19 63H366zM395.27 35c0-11.87 6.18-18.32 17.72-18.32S430.7 23.16 430.7 35v10.36c0 11.81-6.17 18.32-17.71 18.32s-17.72-6.44-17.72-18.32zM413 55.56c6 0 8.59-2.82 8.59-9.53V34.36c0-6.71-2.55-9.53-8.59-9.53s-8.59 2.82-8.59 9.53V46c-.01 6.74 2.59 9.56 8.59 9.56zM438.08 17.39h8.38l13 21.4c1.07 1.74 3.62 6.91 3.62 6.91h.14s-.34-4.9-.34-9.39V17.39h8.86V63h-8.84v-3.68L451.43 40.6l-4.5-7.85h-.2s.2 4.16.2 8.65V63h-8.85z" wz_dt_ref="true"></path><path data-name="A" d="M515.16 57.91V63H507l-2.49-9.6a40.81 40.81 0 01-8.12.81 43.91 43.91 0 01-7.91-.74L486 63h-8v-5.1l11.2-40.51H504zm-12.68-12.14l-2.68-10.14c-1.08-4.22-2.42-10.13-2.42-10.13h-1.81s-1.34 5.91-2.48 10.13l-2.62 10.2a33.45 33.45 0 005.9.54 31.1 31.1 0 006.11-.6z"></path><path d="M51.89 1.25l.4.27C56.69 4.43 60.23 5 65.61 5a18.14 18.14 0 005.89-1l.5-.25 2.55 3.58-.26.36C64.8 20.3 72.2 33.91 77.44 39.35l.48.5-.49.49c-.69.69-1.88 1.93-2.76 2.85l-.3.32v1.08C74.89 53 72.71 59.91 68 65.13c-5 5.54-13 8.87-22.38 9.39h-.36l-.27.24c-2.39 2.18-4.82 4-4.84 4l-.43.31-.42-.31c-.1-.08-2.5-1.86-4.86-4l-.27-.24h-.36c-9.42-.52-17.37-3.85-22.41-9.39C6.65 59.91 4.48 53 4.92 44.59v-.08-.4H5v-.56l-.3-.32c-.83-.87-2-2.15-2.76-2.85l-.49-.49.48-.5c5.24-5.44 12.64-19 3.15-31.66l-.28-.4 2.55-3.58.52.18a18.14 18.14 0 005.89 1c5.38 0 8.92-.53 13.32-3.44l.4-.27.4.28a20 20 0 0011.81 3.97 20 20 0 0011.8-3.94l.4-.28" fill="#deb500"></path><path data-name="BADGE BORDER" d="M79.37 39.84l-1.18-1.22c-5-5.22-12.14-18.28-3.07-30.34l.71-.95-3.43-4.81-1.23.48a17.23 17.23 0 01-5.56 1c-5.18 0-8.58-.5-12.76-3.27l-1-.65-1 .67a19 19 0 01-11.16 3.68A19 19 0 0128.46.67L27.5 0l-1 .65c-4.18 2.77-7.58 3.27-12.76 3.27A17.23 17.23 0 018.2 3L7 2.52 3.53 7.33l.72.95c9.07 12.06 2 25.12-3.07 30.34L0 39.84 1.2 41c.65.65 1.8 1.84 2.74 2.84v.63c-.46 8.7 1.81 15.87 6.74 21.29 5.24 5.76 13.41 9.2 23.08 9.73 2.4 2.18 4.83 4 4.94 4.07l1 .77 1-.77c.1-.08 2.52-1.89 4.92-4.07 9.67-.53 17.84-4 23.08-9.73 4.93-5.42 7.2-12.59 6.74-21.29v-.11a2.87 2.87 0 010-.36v-.15c.94-1 2.09-2.19 2.74-2.84zm-5.73 3.4c.09.88 0 .84.1 1.35 1 19.4-12.48 28.55-28.8 29.23-2.5 2.33-5.25 4.38-5.25 4.38s-2.76-2-5.26-4.38C18.11 73.14 4.6 64 5.63 44.59c.06-.51 0-.47.1-1.35-.94-1-2.49-2.6-3.3-3.42 5.85-6.08 12.68-20 3.2-32.58l2-2.66a18.89 18.89 0 006.13 1.07c5.43 0 9.15-.54 13.71-3.56a20.82 20.82 0 0012.22 4.07A20.81 20.81 0 0051.9 2.09c4.56 3 8.27 3.56 13.71 3.56a18.89 18.89 0 006.13-1.07l2 2.66c-9.48 12.6-2.65 26.5 3.21 32.58-.82.82-2.37 2.43-3.31 3.42z" fill="#050505"></path><path d="M10.79 32.39c3-6.82 4.08-15.57-.92-24.13a22.41 22.41 0 003.89.36c5.11 0 9.14-.47 13.67-3a23.26 23.26 0 0012.25 3.51 23.27 23.27 0 0012.26-3.54c4.53 2.56 8.56 3 13.67 3a21.07 21.07 0 003.91-.38c-5 8.58-3.91 17.33-.94 24.15H10.79" fill="#fff"></path><path d="M68.58 32.39c-3-6.82-4.08-15.57.94-24.15a21.07 21.07 0 01-3.91.38c-5.11 0-9.14-.47-13.67-3a23.27 23.27 0 01-12.26 3.51h-.14v23.26z" fill="#ffd200"></path><path d="M62.22 65.34c5.69-4.16 9.06-10.81 8.56-20.51 0-.55-.09-.58-.14-1.13h-8.42z" fill="#002596"></path><path d="M53.2 69.52a27 27 0 009-4.18V43.7h-9zM17.15 65.34a27 27 0 009 4.18V43.7h-9z" fill="#8b2346"></path><path d="M8.59 44.83c-.5 9.7 2.87 16.35 8.56 20.51V43.7H8.73c-.05.55-.09.58-.14 1.13z" fill="#002596"></path><path d="M39.71 48.48a8.44 8.44 0 014.48 1.29V43.7h-9v6.1a8.43 8.43 0 014.52-1.32zM39.71 65.47a8.43 8.43 0 01-4.53-1.32v6.73H44.19v-6.7a8.44 8.44 0 01-4.48 1.29z" fill="#8b2346"></path><path d="M44.19 43.7v6.07a8.48 8.48 0 010 14.41v6.7a43.33 43.33 0 009-1.36V43.7zM31.21 57a8.49 8.49 0 014-7.18V43.7h-9v25.82a43.43 43.43 0 009 1.36v-6.73a8.47 8.47 0 01-4-7.15z" fill="#002596"></path><path d="M12.82 15.9a25.24 25.24 0 01.23 8.6h8.76v7.89h8.6V24.5h9.17v-8.6h-9.17V7.15a25.57 25.57 0 01-3-1.56 21.44 21.44 0 01-5.62 2.25v8.06zM58.09 32.39V8A19.79 19.79 0 0155 7v25.39zM45.72 32.39V8.31a20.36 20.36 0 01-3.09.62v23.46zM64.27 32.39V8.6c-1.07 0-2.09-.07-3.09-.16v24zM51.91 32.39V5.61a28.32 28.32 0 01-3.09 1.61v25.17z" fill="#cc092f"></path><path d="M8.47 43.68c0 .29-.05.43-.07.59s-.05.29-.07.55C8 52.28 9.81 58.31 13.86 62.76c4.65 5.1 12.18 8 21.79 8.4H43.71c9.6-.4 17.13-3.3 21.78-8.4 4-4.45 5.91-10.48 5.53-17.95 0-.25-.05-.4-.07-.54s0-.3-.07-.59v-.24H8.49zm.37 1.18c0-.24.05-.38.07-.51A3.42 3.42 0 009 44h61.41a3.42 3.42 0 000 .39c0 .13 0 .27.07.5.37 7.31-1.45 13.22-5.41 17.56-4.55 5-12 7.84-21.41 8.23h-8.05c-9.45-.39-16.86-3.23-21.41-8.23-3.91-4.38-5.73-10.29-5.36-17.59zM10.55 32.29l-.16.36H69l-.16-.36c-2.54-5.84-4.45-14.73.92-23.92l.29-.5-.58.13a20.52 20.52 0 01-3.86.38c-5.23 0-9.12-.49-13.54-3l-.13-.08-.13.08a22.92 22.92 0 01-12.13 3.5 22.88 22.88 0 01-12.12-3.5l-.13-.08-.13.08c-4.42 2.5-8.32 3-13.54 3A21.73 21.73 0 019.91 8l-.55-.1.28.49c5.36 9.18 3.45 18.06.91 23.9zm29.29-22.9A23.4 23.4 0 0052 5.89c4.46 2.5 8.4 3 13.66 3a20.94 20.94 0 003.34-.3c-5 9-3.3 17.7-.83 23.54H39.84zM10.36 8.6a22.47 22.47 0 003.4.28c5.26 0 9.2-.49 13.66-3a23.29 23.29 0 0011.9 3.49v22.76H11.18c2.47-5.84 4.21-14.52-.82-23.53z" fill="#050505"></path><path d="M39.65 65.61A8.68 8.68 0 1031 56.93a8.68 8.68 0 008.65 8.68zm0-.52a8.1 8.1 0 01-4.55-1.39 13 13 0 005.43-1.36c1.38-.83 2.84-1.85 3.11-3.22a2.17 2.17 0 013.16 1.75 8.17 8.17 0 01-7.15 4.22zm-4-6.29a3.52 3.52 0 001.45.52 2.79 2.79 0 002.81-2.26 2 2 0 013.12.76c.72 1.71-.79 2.94-2.73 4.1a13 13 0 01-5.81 1.31 8.23 8.23 0 01-2.16-2.73h.2a3.5 3.5 0 003.1-1.7zm-1.3-4.12a18.31 18.31 0 01.79-4.53 8 8 0 013.82-1.34 2.26 2.26 0 00.22 3.3 2.65 2.65 0 00-.61.67 3.14 3.14 0 00.85 4.27 2.31 2.31 0 01-2.26 1.78c-1.91-.24-2.8-1.99-2.83-4.15zm9.35 3.9a2.66 2.66 0 00-.22-.95 2.44 2.44 0 00-3.81-1A2.66 2.66 0 0139 53c.95-1.5 3.11-.91 5.08.19a8.39 8.39 0 013.73 4.45 7.73 7.73 0 01-.63 2.49 2.63 2.63 0 00-3.5-1.55zm.59-5.77c-1.42-.79-3.29-1.52-4.64-1a1.81 1.81 0 01.09-3.08 8.16 8.16 0 018.07 7.67 9.46 9.46 0 00-3.54-3.59zm-9.78-2.21c-.15.6-.3 1.12-.42 1.66-.42 1.92-.41 4.81 1.15 6.24a3 3 0 01-2.73 1.5h-.42a8.13 8.13 0 012.42-9.39zM32.29 35.76v-1.71h-5.8v8.04h1.75v-3.32h2.37v-1.7h-2.37v-1.31h4.05zM39.08 35.66a1.39 1.39 0 011.36.81v.07l1.62-.74v-.08a3.08 3.08 0 00-3-1.79c-2.1 0-3.57 1.7-3.57 4.14s1.38 4.14 3.52 4.14a3.09 3.09 0 003-1.82v-.07l-1.47-.87v.07a1.56 1.56 0 01-1.47 1c-1.06 0-1.78-1-1.78-2.41s.71-2.45 1.79-2.45zM51.8 37.73a1.81 1.81 0 00.75-1.51c0-1.36-1-2.17-2.58-2.17h-3.69v8h3.65c1.81 0 2.89-1 2.89-2.63a1.89 1.89 0 00-1.02-1.69zM48 35.67h1.9c.78 0 .88.36.88.67s-.26.66-.8.66H48zm2 4.75h-2v-1.86h2c.71 0 1 .29 1 .93s-.33.93-1 .93z" fill="#050505"></path></svg>
+
+        <div class="flex justify-center mt-[20px]">
+            <p class="font-bold text-white w-max">Made with ❤️ by Cursor> </p>
+        </div>
+        <div class="bg-gradient-to-r from-belowNav1  to-belowNav2 h-[0.913em] w-full mt-[12px]"></div>
+       </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
